@@ -6,6 +6,8 @@ const DISTRICT_SUFFIX = ["区", "县", "旗", "自治县", "自治旗", "市"];
 const TOWNSHIP_SUFFIX = ["街道", "镇", "乡", "民族乡", "苏木", "街道办事处", "地区"];
 const GENERIC_CITY_NAMES = new Set(["市辖区", "县", "城区", "矿区", "郊区"]);
 const GENERIC_TOWNSHIP_NAMES = new Set(["街道", "镇", "乡", "地区"]);
+/** 与真实口岸语义重叠的乡镇简称，单独输入时不应命中乡镇（如「口岸街道」→「口岸」） */
+const TOWNSHIP_AMBIGUOUS_SHORTS = new Set(["口岸"]);
 
 function normalizeText(text) {
   return (text || "")
@@ -68,7 +70,8 @@ function buildDistrictAliases(d) {
 
 function buildTownshipAliases(t) {
   const aliases = toAliasSet(t.name, t.aliases || [], TOWNSHIP_SUFFIX);
-  return sanitizeAliases(aliases, 2, GENERIC_TOWNSHIP_NAMES);
+  const blacklist = new Set([...GENERIC_TOWNSHIP_NAMES, ...TOWNSHIP_AMBIGUOUS_SHORTS]);
+  return sanitizeAliases(aliases, 2, blacklist);
 }
 
 function buildTownshipSearchEntries(townships = []) {
@@ -331,7 +334,11 @@ function inferProvinceCodesFromTownshipIndex(text, townshipIndex) {
   for (const [name, rows] of Object.entries(townshipIndex || {})) {
     const short = dropSuffix(name, TOWNSHIP_SUFFIX);
     const hitByFull = name && text.includes(name);
-    const hitByShort = short && short.length >= 2 && text.includes(short);
+    const hitByShort =
+      short &&
+      short.length >= 2 &&
+      text.includes(short) &&
+      !(TOWNSHIP_AMBIGUOUS_SHORTS.has(short) && !hitByFull);
     if (hitByFull || hitByShort) {
       matched.push({ name, rows });
     }
