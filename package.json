@@ -34,5 +34,13 @@
     "vue": "^3.5.13"
   },
   "author": "张憨憨 <15175809883@163.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/han013/vue-address-auto-parser.git"
+  },
+  "homepage": "https://github.com/han013/vue-address-auto-parser#readme",
+  "bugs": {
+    "url": "https://github.com/han013/vue-address-auto-parser/issues"
+  }
 }

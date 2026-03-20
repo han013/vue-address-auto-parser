@@ -68,11 +68,28 @@ npm login
 npm publish
 ```
 
+若账号启用了 **2FA（双因素认证）**，发布时必须带上一次性验证码：
+
+```bash
+npm publish --otp=123456
+```
+
 如发布失败，请先检查：
 
 - `npm whoami` 是否已登录
 - 包名是否可用
 - 是否有对应 scope 权限
+- **曾删除/下架过的版本**：npm 通常不允许再次发布同一版本号，需将 `package.json` 里 `version` 升为 `1.0.1` 等后再 `npm publish`
+
+### 与 GitHub 仓库关联
+
+`package.json` 中已配置：
+
+- `repository`：源码仓库地址
+- `homepage`：npm 页「主页」链接
+- `bugs`：问题反馈地址
+
+发布成功后，npm 包页面会自动显示 **Repository** 链接；也可在 [npmjs.com](https://www.npmjs.com/) 该包页面的 *Settings* 中核对信息。
 
 ## Git 发布建议
 

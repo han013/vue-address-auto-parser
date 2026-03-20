@@ -13,6 +13,8 @@
 npm i vue-address-auto-parser
 ```
 
+源码与反馈：[GitHub - han013/vue-address-auto-parser](https://github.com/han013/vue-address-auto-parser)
+
 ## 快速使用
 
 ### 1) 方法调用（推荐，默认导出）
