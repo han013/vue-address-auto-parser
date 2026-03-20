@@ -1,0 +1,47 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+dist-ssr
+*.local
+assets/logo-mac.png
+
+# Tauri / Rust
+src-tauri/target/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment (保留 .env.development / .env.production 示例，忽略含敏感信息的本地覆盖)
+.env.local
+.env.*.local
+
+# Cache
+.vite
+.cache
+*.tsbuildinfo
+
+# Test / Coverage
+coverage
+*.lcov
+
+# Editor directories and files
+.vscode/*
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.cursor
+
+# OS
+.DS_Store
+Thumbs.db

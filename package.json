@@ -1,0 +1,38 @@
+{
+  "name": "vue-address-auto-parser",
+  "version": "1.0.0",
+  "description": "Vue3 地址自动识别组件（省市区 + 口岸等标志地区）",
+  "type": "module",
+  "main": "./dist/vue-address-auto-parser.umd.cjs",
+  "module": "./dist/vue-address-auto-parser.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vue-address-auto-parser.js",
+      "require": "./dist/vue-address-auto-parser.umd.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build:data": "node scripts/build-region-data.mjs",
+    "build": "vite build",
+    "dev": "vite"
+  },
+  "keywords": [
+    "vue3",
+    "address",
+    "china",
+    "component"
+  ],
+  "peerDependencies": {
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.4",
+    "vite": "^6.2.0",
+    "vue": "^3.5.13"
+  },
+  "author": "张憨憨 <15175809883@163.com>",
+  "license": "MIT"
+}
