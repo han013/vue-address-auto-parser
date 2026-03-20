@@ -1,4 +1,4 @@
-# vue-address-auto-parser
+# vue-address-parser
 
 中国地址智能识别库，支持：
 
@@ -10,7 +10,7 @@
 ## 安装
 
 ```bash
-npm i vue-address-auto-parser
+npm i vue-address-parser
 ```
 
 源码与反馈：[GitHub - han013/vue-address-auto-parser](https://github.com/han013/vue-address-auto-parser)
@@ -20,7 +20,7 @@ npm i vue-address-auto-parser
 ### 1) 方法调用（推荐，默认导出）
 
 ```js
-import parseAddress from "vue-address-auto-parser";
+import parseAddress from "vue-address-parser";
 
 const result = await parseAddress("河北省衡水市故城县房庄镇");
 console.log(result);
@@ -44,7 +44,7 @@ console.log(result);
 ```vue
 <script setup>
 import { ref } from "vue";
-import { AddressAutoParser } from "vue-address-auto-parser";
+import { AddressAutoParser } from "vue-address-parser";
 
 const address = ref("");
 </script>
@@ -59,7 +59,7 @@ const address = ref("");
 ```js
 import { createApp } from "vue";
 import App from "./App.vue";
-import { AddressAutoParserPlugin } from "vue-address-auto-parser";
+import { AddressAutoParserPlugin } from "vue-address-parser";
 
 createApp(App).use(AddressAutoParserPlugin).mount("#app");
 ```

@@ -15,8 +15,8 @@ export default defineConfig(({ command }) => {
     build: {
       lib: {
         entry: resolve(__dirname, "src/index.js"),
-        name: "VueAddressAutoParser",
-        fileName: "vue-address-auto-parser",
+        name: "VueAddressParser",
+        fileName: "vue-address-parser",
         formats: ["es", "umd"],
       },
       rollupOptions: {

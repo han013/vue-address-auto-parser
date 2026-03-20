@@ -59,7 +59,7 @@ npm run build
 npm pack
 ```
 
-生成文件示例：`vue-address-auto-parser-1.0.0.tgz`
+生成文件示例：`vue-address-parser-1.0.0.tgz`
 
 ## 发布到 npm
 

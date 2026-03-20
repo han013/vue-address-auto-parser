@@ -1,14 +1,14 @@
 {
-  "name": "vue-address-auto-parser",
-  "version": "1.0.1",
+  "name": "vue-address-parser",
+  "version": "1.0.0",
   "description": "Vue3 地址自动识别组件（省市区 + 口岸等标志地区）",
   "type": "module",
-  "main": "./dist/vue-address-auto-parser.umd.cjs",
-  "module": "./dist/vue-address-auto-parser.js",
+  "main": "./dist/vue-address-parser.umd.cjs",
+  "module": "./dist/vue-address-parser.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-address-auto-parser.js",
-      "require": "./dist/vue-address-auto-parser.umd.cjs"
+      "import": "./dist/vue-address-parser.js",
+      "require": "./dist/vue-address-parser.umd.cjs"
     }
   },
   "files": [
