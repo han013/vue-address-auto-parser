@@ -1,6 +1,6 @@
 {
   "name": "vue-address-parser",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue3 地址自动识别组件（省市区 + 口岸等标志地区）",
   "type": "module",
   "main": "./dist/vue-address-parser.umd.cjs",
